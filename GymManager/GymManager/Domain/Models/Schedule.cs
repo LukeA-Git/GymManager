@@ -1,8 +1,19 @@
 namespace GymManager.Domain.Models
 {
+    public enum ScheduleType
+    {
+        Cleaning,
+        Maintenance
+    }
+
     public class Schedule
     {
-        // Temporary placeholder so project builds.
-        // The real implementation will be added later by whoever owns this feature.
+        public ScheduleType ScheduleType { get; set; }
+        public int DaysUntilNotify { get; set; }
+
+        public void SetDays(int days)
+        {
+            DaysUntilNotify = days;
+        }
     }
 }
