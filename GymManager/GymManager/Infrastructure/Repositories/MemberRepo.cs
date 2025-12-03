@@ -5,30 +5,18 @@ using System.Linq;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class MemberRepo : IMemberRepo
+    public class MemberRepo<Member> : IRepository<Member>
     {
-        public List<Member> MemberList { get; } = new();
+        private readonly List<Member> _members = new();
 
-        public void AddMember(Member member)
+        public void Add(Member member)
         {
-            MemberList.Add(member);
+            _members.Add(member);
         }
 
-        public Member GetMemberByID(int memberId)
+        public List<Member> GetAll()
         {
-            return MemberList.FirstOrDefault(m => m.Id == memberId);
-        }
-
-        public void RemoveMemberByID(int memberId)
-        {
-            var member = GetMemberByID(memberId);
-            if (member != null)
-                MemberList.Remove(member);
-        }
-
-        public void SetMemberName(Member member, string name)
-        {
-            member.Name = name;
+            return _members;
         }
     }
 }

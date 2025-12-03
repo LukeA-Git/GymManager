@@ -8,7 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5b26e6-59ea-4f4e-8fc3-0d3824b161c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IFileReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IFileReaderAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Infrastructure/FileReaders/FileReaderAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/Member.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/Member.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/MemberRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/MemberRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/GymManager.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/GymManager.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/GymManager.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/GymManager.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,18 +35,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "GiancarloPretell"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GiancarloPretell&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LukeA-Git/GymManager.git",
-    "accountId": "30aab75b-c5ff-4c02-ba37-b699a051c018"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LukeA-Git/GymManager.git&quot;,
+    &quot;accountId&quot;: &quot;30aab75b-c5ff-4c02-ba37-b699a051c018&quot;
   }
-}]]></component>
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GymManager/Domain/Interfaces/IFileReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Domain/Interfaces/IFileReaderAdapter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Domain/Interfaces/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Infrastructure/FileReaders/FileReaderAdapter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Infrastructure/FileReaders/StreamReaderAdapter.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -38,21 +62,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "5-solidify-irepository-structure-and-begin-implementation-of-memberrepo-a…trepo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;File-I/O&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="GymManager" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -87,6 +111,7 @@
       <updated>1763079437419</updated>
       <workItem from="1763079438481" duration="3000" />
       <workItem from="1764046715186" duration="1661000" />
+      <workItem from="1764730583874" duration="1764000" />
     </task>
     <servers />
   </component>
