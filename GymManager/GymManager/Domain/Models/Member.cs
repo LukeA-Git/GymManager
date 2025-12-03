@@ -22,6 +22,11 @@ namespace GymManager.Domain.Models
                 DateTime.Parse(parts[2].Trim())
             );
         }
+        
+        public string ToCsv()
+        {
+            return $"{Id},{Name},{EnrollDate:yyyy-MM-dd}";
+        }
 
         public void Pay()
         {

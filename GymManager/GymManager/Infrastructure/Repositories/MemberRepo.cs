@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class MemberRepo<Member> : IRepository<Member>
+    public class MemberRepo : IRepository<Member>
     {
         private readonly List<Member> _members = new();
 
@@ -17,6 +17,38 @@ namespace GymManager.Infrastructure.Repositories
         public List<Member> GetAll()
         {
             return _members;
+        }
+
+        public void Clear()
+        {
+            _members.Clear();
+        }
+
+        public void Remove(Member member)
+        {
+            _members.Remove(member);
+        }
+        
+        public void Update(Member updatedMember)
+        {
+            var existing = FindById(updatedMember.Id);
+            if (existing != null)
+            {
+                _members.Remove(existing);
+                _members.Add(updatedMember);
+            }
+        }
+        
+        public Member? FindById(int id)
+        {
+            return _members.FirstOrDefault(m => m.Id == id);
+        }
+        
+        public List<Member> FindByName(string name)
+        {
+            return _members
+                .Where(m => m.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
     }
 }

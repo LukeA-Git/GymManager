@@ -1,6 +1,7 @@
 namespace GymManager.Domain.Interfaces;
 
-public interface IFileReaderAdapter<T>
+public interface IFileAdapter<T>
 {
     void ReadIntoRepository(IRepository<T> repository);
+    void WriteFromRepository(IRepository<T> repository);
 }

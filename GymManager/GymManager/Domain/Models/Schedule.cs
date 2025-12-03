@@ -1,19 +1,26 @@
 namespace GymManager.Domain.Models
 {
-    public enum ScheduleType
-    {
-        Cleaning,
-        Maintenance
-    }
-
     public class Schedule
     {
-        public ScheduleType ScheduleType { get; set; }
-        public int DaysUntilNotify { get; set; }
+        public DateTime LastPerformed { get; set; }
+        public DateTime NextScheduled { get; set; }
 
-        public void SetDays(int days)
+        public Schedule(DateTime lastPerformed, DateTime nextScheduled)
         {
-            DaysUntilNotify = days;
+            LastPerformed = lastPerformed;
+            NextScheduled = nextScheduled;
+        }
+
+        // Mark the task as performed now
+        public void Perform()
+        {
+            LastPerformed = DateTime.Now;
+        }
+
+        // Check if the task is due
+        public bool IsDue(DateTime currentDate)
+        {
+            return currentDate >= NextScheduled;
         }
     }
 }
