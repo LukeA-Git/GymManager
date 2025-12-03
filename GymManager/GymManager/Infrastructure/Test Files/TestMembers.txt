@@ -1,0 +1,10 @@
+1,Shotaro Hidari,2019-01-15
+2,Philip Sonozaki,2019-02-20
+3,Eiji Hino,2019-03-05
+4,Ankh,2019-04-10
+5,Ryotaro Nogami,2019-05-25
+6,Sakurai Yuto,2019-06-30
+7,Kouta Kazuraba,2019-07-12
+8,Date Akira,2019-08-18
+9,Banjou Ryuga,2019-09-22
+10,Sento Kiryu,2019-10-05

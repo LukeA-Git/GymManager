@@ -5,30 +5,50 @@ using System.Linq;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class MemberRepo : IMemberRepo
+    public class MemberRepo : IRepository<Member>
     {
-        public List<Member> MemberList { get; } = new();
+        private readonly List<Member> _members = new();
 
-        public void AddMember(Member member)
+        public void Add(Member member)
         {
-            MemberList.Add(member);
+            _members.Add(member);
         }
 
-        public Member GetMemberByID(int memberId)
+        public List<Member> GetAll()
         {
-            return MemberList.FirstOrDefault(m => m.Id == memberId);
+            return _members;
         }
 
-        public void RemoveMemberByID(int memberId)
+        public void Clear()
         {
-            var member = GetMemberByID(memberId);
-            if (member != null)
-                MemberList.Remove(member);
+            _members.Clear();
         }
 
-        public void SetMemberName(Member member, string name)
+        public void Remove(Member member)
         {
-            member.Name = name;
+            _members.Remove(member);
+        }
+        
+        public void Update(Member updatedMember)
+        {
+            var existing = FindById(updatedMember.Id);
+            if (existing != null)
+            {
+                _members.Remove(existing);
+                _members.Add(updatedMember);
+            }
+        }
+        
+        public Member? FindById(int id)
+        {
+            return _members.FirstOrDefault(m => m.Id == id);
+        }
+        
+        public List<Member> FindByName(string name)
+        {
+            return _members
+                .Where(m => m.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
     }
 }

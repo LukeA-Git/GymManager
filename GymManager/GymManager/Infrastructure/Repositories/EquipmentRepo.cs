@@ -5,25 +5,62 @@ using System.Linq;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class EquipmentRepo : IEquipmentRepo
+    public class EquipmentRepo : IRepository<Equipment>
     {
-        public List<Equipment> EquipmentList { get; } = new();
+        private readonly List<Equipment> _equipmentList = new List<Equipment>();
 
-        public void AddEquipment(Equipment equipment)
+        public void Add(Equipment equipment)
         {
-            EquipmentList.Add(equipment);
+            _equipmentList.Add(equipment);
         }
 
-        public Equipment GetEquipmentByID(int equipmentId)
+        public List<Equipment> GetAll()
         {
-            return EquipmentList.FirstOrDefault(e => e.Id == equipmentId);
+            return new List<Equipment>(_equipmentList);
         }
 
-        public void RemoveEquipmentByID(int equipmentId)
+        public void Clear()
         {
-            var eq = GetEquipmentByID(equipmentId);
-            if (eq != null)
-                EquipmentList.Remove(eq);
+            _equipmentList.Clear();
+        }
+
+        public Equipment FindById(int id)
+        {
+            return _equipmentList.FirstOrDefault(e => e.Id == id);
+        }
+
+        public List<Equipment> FindByType(EQType type)
+        {
+            return _equipmentList.Where(e => e.EQType == type).ToList();
+        }
+
+        public List<Equipment> FindByName(string name)
+        {
+            return _equipmentList.Where(e => e.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        public void Remove(Equipment equipment)
+        {
+            _equipmentList.Remove(equipment);
+        }
+
+        public void Update(Equipment updatedEquipment)
+        {
+            var index = _equipmentList.FindIndex(e => e.Id == updatedEquipment.Id);
+            if (index >= 0)
+            {
+                _equipmentList[index] = updatedEquipment;
+            }
+        }
+
+        public List<Equipment> FindNeedingCleaning(DateTime currentDate)
+        {
+            return _equipmentList.Where(e => e.IsDueForCleaning(currentDate)).ToList();
+        }
+
+        public List<Equipment> FindNeedingMaintenance(DateTime currentDate)
+        {
+            return _equipmentList.Where(e => e.IsDueForMaintenance(currentDate)).ToList();
         }
     }
 }
