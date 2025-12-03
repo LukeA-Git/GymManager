@@ -1,0 +1,15 @@
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/bin/Debug/net9.0/GymManager
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/bin/Debug/net9.0/GymManager.deps.json
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/bin/Debug/net9.0/GymManager.runtimeconfig.json
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/bin/Debug/net9.0/GymManager.dll
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/bin/Debug/net9.0/GymManager.pdb
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.dll
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/refint/GymManager.dll
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.pdb
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/GymManager.genruntimeconfig.cache
+/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/Debug/net9.0/ref/GymManager.dll
