@@ -1,64 +1,68 @@
-﻿using System;
-using GymManager.Domain.Models;
+﻿using GymManager.Domain.Models;
 using GymManager.Infrastructure.Repositories;
 
-namespace GymManager;
-
-class Program
+namespace GymManager
 {
-    static void Main(string[] args)
+    class Program
     {
-        var userRepo = new UserRepo();
-
-        //  DEMO USERS 
-        userRepo.AddUser(new AdminUser
+        static void Main(string[] args)
         {
-            UserID = 1,
-            UserPassword = "admin123",
-            Role = "Admin"
-        });
+            var userRepo = new UserRepo();
 
-        userRepo.AddUser(new EmployeeUser
-        {
-            UserID = 10,
-            UserPassword = "emp123",
-            Role = "Employee"
-        });
+            //  DEMO USERS 
+            userRepo.Add(new AdminUser
+            {
+                UserID = 1,
+                UserPassword = "admin123",
+                Role = "Admin"
+            });
 
-        userRepo.AddUser(new MemberUser
-        {
-            UserID = 100,
-            UserPassword = "mem123",
-            Role = "Member"
-        });
+            userRepo.Add(new EmployeeUser
+            {
+                UserID = 10,
+                UserPassword = "emp123",
+                Role = "Employee"
+            });
 
-        //  LOGIN PROMPT
-        Console.WriteLine("=== GYM LOGIN ===");
-        Console.Write("Enter User ID: ");
-        int id = int.Parse(Console.ReadLine());
+            userRepo.Add(new MemberUser
+            {
+                UserID = 100,
+                UserPassword = "mem123",
+                Role = "Member"
+            });
 
-        Console.Write("Enter Password: ");
-        string password = Console.ReadLine();
+            //  LOGIN LOOP 
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== GYM LOGIN ===");
+                Console.Write("Enter User ID: ");
+                int id = int.Parse(Console.ReadLine());
 
-        var currentUser = userRepo.Authenticate(id, password);
+                Console.Write("Enter Password: ");
+                string password = Console.ReadLine();
 
-        if (currentUser == null)
-        {
-            Console.WriteLine(" Invalid login.");
-            Console.ReadLine();
-            return;
+                var currentUser = userRepo.Authenticate(id, password);
+
+                if (currentUser == null)
+                {
+                    Console.WriteLine("\n Invalid login.");
+                    Console.WriteLine("Press ENTER to try again...");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                Console.WriteLine($"\n Logged in as: {currentUser.Role} (UserID: {currentUser.UserID})");
+                Console.WriteLine("This user has access to:\n");
+
+                foreach (var option in currentUser.GetAllOpt())
+                {
+                    Console.WriteLine("- " + option);
+                }
+
+                Console.WriteLine("\nPress ENTER to logout...");
+                Console.ReadLine();
+            }
         }
-
-        // AFTER LOGIN SHOW PERMISSIONS
-        Console.WriteLine($"\n✅ Logged in as: {currentUser.Role} (UserID: {currentUser.UserID})");
-        Console.WriteLine("This user has access to:");
-
-        foreach (var option in currentUser.GetAllOpt())
-        {
-            Console.WriteLine("- " + option);
-        }
-
-        Console.WriteLine("\nPress ENTER to exit...");
-        Console.ReadLine();
     }
 }

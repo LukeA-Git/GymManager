@@ -1,51 +1,56 @@
+using System.Collections.Generic;
+using System.Linq;
 using GymManager.Domain.Interfaces;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class UserRepo
+    public class UserRepo : IRepository<IUser>
     {
         private readonly List<IUser> _users = new();
 
-        // ADD USER
-        public void AddUser(IUser user)
+        //  ADD
+        public void Add(IUser user)
         {
             _users.Add(user);
         }
 
-        // REMOVE USER BY ID
-        public void RemoveUser(int id)
+        //  REMOVE
+        public void Remove(IUser user)
         {
-            var user = _users.FirstOrDefault(u => u.UserID == id);
-            if (user != null)
+            _users.Remove(user);
+        }
+
+        //  UPDATE
+        public void Update(IUser user)
+        {
+            var existing = FindById(user.UserID);
+            if (existing != null)
             {
-                _users.Remove(user);
+                _users.Remove(existing);
+                _users.Add(user);
             }
         }
 
-        // UPDATE USER
-        public void UpdateUser(IUser updatedUser)
-        {
-            int index = _users.FindIndex(u => u.UserID == updatedUser.UserID);
-            if (index != -1)
-            {
-                _users[index] = updatedUser;
-            }
-        }
-
-        // GET USER BY ID
-        public IUser GetUserById(int id)
+        //  FIND BY ID
+        public IUser? FindById(int id)
         {
             return _users.FirstOrDefault(u => u.UserID == id);
         }
 
-        // GET ALL USERS
-        public List<IUser> GetAllUsers()
+        //  GET ALL
+        public List<IUser> GetAll()
         {
             return _users;
         }
 
-        // LOGIN METHOD (ID + PASSWORD)
-        public IUser Authenticate(int id, string password)
+        //  CLEAR (THIS FIXES YOUR ERROR)
+        public void Clear()
+        {
+            _users.Clear();
+        }
+
+        //  LOGIN (CUSTOM METHOD)
+        public IUser? Authenticate(int id, string password)
         {
             return _users.FirstOrDefault(u =>
                 u.UserID == id &&

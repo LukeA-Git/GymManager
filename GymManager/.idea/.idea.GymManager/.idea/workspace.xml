@@ -8,16 +8,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5b26e6-59ea-4f4e-8fc3-0d3824b161c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
