@@ -3,7 +3,7 @@ namespace GymManager.Domain.Models
     public class Member
     {
         public int Id { get; set; }          // internal ID for repo
-        public string Name { get; set; } = string.Empty;  
+        public string Name { get; set; }
         public DateTime EnrollDate { get; set; }
 
         public Member(int id, string name, DateTime enrollDate)
@@ -30,7 +30,8 @@ namespace GymManager.Domain.Models
 
         public void Pay()
         {
-            // TODO: implement payment logic, for now, will use desktop notification
+            // TODO: implement payment logic, for now, prints 'paid"
+            Console.WriteLine($"[WIP] {Name} paid");
         }
     }
 }

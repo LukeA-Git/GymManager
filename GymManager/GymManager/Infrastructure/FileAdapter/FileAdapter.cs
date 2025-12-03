@@ -1,6 +1,6 @@
 using GymManager.Domain.Interfaces;
 
-namespace GymManager.Infrastructure.FileReaders;
+namespace GymManager.Infrastructure.FileAdapter;
 
 /* This adapter class takes C#'s StreamReader file reader and implements
  * the GymManager's generic IFileReaderAdapter<T> interface to manage our file I/O logic.

@@ -10,14 +10,12 @@ namespace GymManager.Domain.Models
             LastPerformed = lastPerformed;
             NextScheduled = nextScheduled;
         }
-
-        // Mark the task as performed now
+        
         public void Perform()
         {
             LastPerformed = DateTime.Now;
         }
-
-        // Check if the task is due
+        
         public bool IsDue(DateTime currentDate)
         {
             return currentDate >= NextScheduled;

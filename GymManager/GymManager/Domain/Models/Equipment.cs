@@ -17,14 +17,30 @@ public class Equipment
         Maintenance = maintenance;
     }
 
-    public void Clean() => Cleaning.LastPerformed = DateTime.Now;
-    public void Maintain() => Maintenance.LastPerformed = DateTime.Now;
+    public void Clean()
+    {
+        Cleaning.LastPerformed = DateTime.Now;
+    }
 
-    public bool IsDueForCleaning(DateTime currentDate) => currentDate >= Cleaning.NextScheduled;
-    public bool IsDueForMaintenance(DateTime currentDate) => currentDate >= Maintenance.NextScheduled;
+    public void Maintain()
+    {
+        Maintenance.LastPerformed = DateTime.Now;
+    }
 
-    public string ToCsvLine() =>
-        $"{Id},{EQType},{Name},{Cleaning.NextScheduled:yyyy-MM-dd},{Maintenance.NextScheduled:yyyy-MM-dd}";
+    public bool IsDueForCleaning(DateTime currentDate)
+    {
+        return currentDate >= Cleaning.NextScheduled;
+    }
+
+    public bool IsDueForMaintenance(DateTime currentDate)
+    {
+        return currentDate >= Maintenance.NextScheduled;
+    }
+
+    public string ToCsvLine()
+    {
+        return $"{Id},{EQType},{Name},{Cleaning.NextScheduled:yyyy-MM-dd},{Maintenance.NextScheduled:yyyy-MM-dd}";
+    }
 
     public static Equipment FromCsvLine(string line)
     {
