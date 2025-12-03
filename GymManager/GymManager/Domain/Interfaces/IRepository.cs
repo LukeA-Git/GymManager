@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace GymManager.Domain.Interfaces;
 
 /* Every object within the project will have some sort of internal Id

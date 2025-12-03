@@ -1,3 +1,5 @@
+using System;
+
 namespace GymManager.Domain.Interfaces
 {
     public interface IUser
