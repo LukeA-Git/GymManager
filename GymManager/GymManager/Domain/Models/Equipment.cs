@@ -43,6 +43,13 @@ public class Equipment
         return $"{Id},{EQType},{Name},{Cleaning.NextScheduled:yyyy-MM-dd},{Maintenance.NextScheduled:yyyy-MM-dd}";
     }
 
+    public override string ToString()
+    {
+        return $"Equipment ID: {Id}, Name: {Name}, Type: {EQType}, " +
+               $"Last Cleaning: {Cleaning.LastPerformed:yyyy-MM-dd} " +
+               $"Last Maintenance: {Maintenance.LastPerformed:yyyy-MM-dd}";
+    }
+
     public static Equipment FromCsvLine(string line)
     {
         var parts = line.Split(',');

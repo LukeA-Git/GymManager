@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/jonny/.nuget/packages/": {}
+    "C:\\Users\\banjo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/GymManager.csproj",
+      "projectUniqueName": "C:\\Users\\banjo\\RiderProjects\\GymManager\\GymManager\\GymManager\\GymManager.csproj",
       "projectName": "GymManager",
-      "projectPath": "/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/GymManager.csproj",
-      "packagesPath": "/Users/jonny/.nuget/packages/",
-      "outputPath": "/Users/jonny/RiderProjects/GymManager/GymManager/GymManager/obj/",
+      "projectPath": "C:\\Users\\banjo\\RiderProjects\\GymManager\\GymManager\\GymManager\\GymManager.csproj",
+      "packagesPath": "C:\\Users\\banjo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\banjo\\RiderProjects\\GymManager\\GymManager\\GymManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jonny/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\banjo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/jonny/.dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
