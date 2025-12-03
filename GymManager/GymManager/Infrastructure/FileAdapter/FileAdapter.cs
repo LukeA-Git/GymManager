@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using GymManager.Domain.Interfaces;
 
 namespace GymManager.Infrastructure.FileAdapter;

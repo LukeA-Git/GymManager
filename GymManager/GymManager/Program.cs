@@ -1,4 +1,5 @@
-﻿using GymManager.Domain.Models;
+﻿using System;
+using GymManager.Domain.Models;
 
 namespace GymManager;
 
