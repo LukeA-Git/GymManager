@@ -1,68 +1,56 @@
-﻿using GymManager.Domain.Models;
+﻿using System;
+using GymManager.Domain.Interfaces;
+using GymManager.Domain.Models;
 using GymManager.Infrastructure.Repositories;
+using GymManager.Application.Menus;
 
-namespace GymManager
+namespace GymManager;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        // CREATE USER REPOSITORY
+        var userRepo = new UserRepo();
+
+        // SEED USERS (Admin, Owner, Employee, Member)
+        userRepo.Add(new AdminUser { UserID = 1, UserPassword = "admin", Role = "Admin" });
+        userRepo.Add(new OwnerUser { UserID = 2, UserPassword = "own", Role = "Owner" });
+        userRepo.Add(new EmployeeUser { UserID = 3, UserPassword = "emp", Role = "Employee" });
+        userRepo.Add(new MemberUser { UserID = 4, UserPassword = "mem", Role = "Member" });
+
+        // LOGIN
+        Console.WriteLine("=== LOGIN ===");
+        Console.Write("User ID: ");
+        int id = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Password: ");
+        string password = Console.ReadLine()!;
+
+        IUser? user = userRepo.Authenticate(id, password);
+
+        if (user == null)
         {
-            var userRepo = new UserRepo();
-
-            //  DEMO USERS 
-            userRepo.Add(new AdminUser
-            {
-                UserID = 1,
-                UserPassword = "admin123",
-                Role = "Admin"
-            });
-
-            userRepo.Add(new EmployeeUser
-            {
-                UserID = 10,
-                UserPassword = "emp123",
-                Role = "Employee"
-            });
-
-            userRepo.Add(new MemberUser
-            {
-                UserID = 100,
-                UserPassword = "mem123",
-                Role = "Member"
-            });
-
-            //  LOGIN LOOP 
-            while (true)
-            {
-                Console.Clear();
-                Console.WriteLine("=== GYM LOGIN ===");
-                Console.Write("Enter User ID: ");
-                int id = int.Parse(Console.ReadLine());
-
-                Console.Write("Enter Password: ");
-                string password = Console.ReadLine();
-
-                var currentUser = userRepo.Authenticate(id, password);
-
-                if (currentUser == null)
-                {
-                    Console.WriteLine("\n Invalid login.");
-                    Console.WriteLine("Press ENTER to try again...");
-                    Console.ReadLine();
-                    continue;
-                }
-
-                Console.WriteLine($"\n Logged in as: {currentUser.Role} (UserID: {currentUser.UserID})");
-                Console.WriteLine("This user has access to:\n");
-
-                foreach (var option in currentUser.GetAllOpt())
-                {
-                    Console.WriteLine("- " + option);
-                }
-
-                Console.WriteLine("\nPress ENTER to logout...");
-                Console.ReadLine();
-            }
+            Console.WriteLine(" Login failed.");
+            return;
         }
+
+        Console.WriteLine($"\n Logged in as {user.Role}");
+
+        // STRATEGY MENU SELECTION
+        IMenuStrategy menu = user switch
+        {
+            AdminUser => new AdminMenuStrategy(),
+            OwnerUser => new OwnerMenuStrategy(),
+            EmployeeUser => new EmployeeMenuStrategy(),
+            MemberUser => new MemberMenuStrategy(),
+            _ => throw new Exception("Unknown user role")
+        };
+
+        // SHOW MENU
+        menu.ShowMenu();
+
+        Console.WriteLine("\nPress ENTER to exit...");
+        Console.ReadLine();
     }
 }
