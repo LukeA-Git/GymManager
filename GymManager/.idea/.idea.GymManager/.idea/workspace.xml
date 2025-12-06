@@ -8,13 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5b26e6-59ea-4f4e-8fc3-0d3824b161c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GymManager/Application/Menus/AdminMenuStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Application/Menus/EmployeeMenuStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Application/Menus/MemberMenuStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Application/Menus/OwnerMenuStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IMenuStrategy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" afterDir="false" />
@@ -45,9 +50,15 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GymManager/Application/Menus/AdminMenuStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Application/Menus/EmployeeMenuStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Application/Menus/MemberMenuStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Application/Menus/OwnerMenuStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GymManager/Domain/Interfaces/IMenuStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GymManager/Domain/Interfaces/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -66,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/strategy-menus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,14 +122,26 @@
       <workItem from="1764046715186" duration="1661000" />
       <workItem from="1764730583874" duration="2388000" />
     </task>
+    <task id="LOCAL-00001" summary="wtv">
+      <option name="closed" value="true" />
+      <created>1764788576128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764788576128</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="wtv" />
+    <option name="LAST_COMMIT_MESSAGE" value="wtv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

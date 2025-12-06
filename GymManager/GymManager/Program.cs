@@ -1,7 +1,8 @@
 using System;
+using GymManager.Domain.Interfaces;
 using GymManager.Domain.Models;
-using GymManager.Infrastructure.FileAdapter;
 using GymManager.Infrastructure.Repositories;
+using GymManager.Application.Menus;
 
 namespace GymManager;
 
@@ -9,130 +10,47 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*
-         * Driver function first collect the file paths from the user,
-         * creates the empty repository objects
-         * then creates File Adapter objects for those files,
-         * and lastly calls each adapters' ReadInto method to create
-         * and store the respective objects in each repository.
-         */
-        
-        Console.WriteLine("Enter path to equipment data file:");
-        string equipmentFile = Console.ReadLine();
+        // CREATE USER REPOSITORY
+        var userRepo = new UserRepo();
 
-        Console.WriteLine("Enter path to member data file:");
-        string memberFile = Console.ReadLine();
-        
-        var equipmentRepo = new EquipmentRepo();
-        var memberRepo = new MemberRepo();
-        
-        var equipmentAdapter = new FileAdapter<Equipment>(
-            equipmentFile,
-            Equipment.FromCsvLine,
-            equipment => equipment.ToCsvLine()
-        );
+        // SEED USERS (Admin, Owner, Employee, Member)
+        userRepo.Add(new AdminUser { UserID = 1, UserPassword = "admin", Role = "Admin" });
+        userRepo.Add(new OwnerUser { UserID = 2, UserPassword = "own", Role = "Owner" });
+        userRepo.Add(new EmployeeUser { UserID = 3, UserPassword = "emp", Role = "Employee" });
+        userRepo.Add(new MemberUser { UserID = 4, UserPassword = "mem", Role = "Member" });
 
-        var memberAdapter = new FileAdapter<Member>(
-            memberFile,
-            Member.FromCsvLine,
-            member => member.ToCsvLine()
-        );
-        
-        equipmentAdapter.ReadIntoRepository(equipmentRepo);
-        memberAdapter.ReadIntoRepository(memberRepo);
-        
-        /*
-         * Menu loop that will implement the user access logic
-         */
-        Console.WriteLine("Welcome to the AGENCY Gym Manager...");
-        bool exit = false;
-        while (!exit)
+        // LOGIN
+        Console.WriteLine("=== LOGIN ===");
+        Console.Write("User ID: ");
+        int id = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Password: ");
+        string password = Console.ReadLine()!;
+
+        IUser? user = userRepo.Authenticate(id, password);
+
+        if (user == null)
         {
-            Console.WriteLine("Select an option:");
-            Console.WriteLine("1. List all equipment");
-            Console.WriteLine("2. List all members");
-            Console.WriteLine("3. Find equipment needing cleaning");
-            Console.WriteLine("4. Add new member");
-            Console.WriteLine("5. Save Changes");
-            Console.WriteLine("6. Clean an Equipment");
-            Console.WriteLine("7. Maintain an Equipment");
-            Console.WriteLine("8. Exit");
-            
-            string choice = Console.ReadLine();
-            switch (choice)
-            {
-                case "1":
-                    foreach (Equipment eq in equipmentRepo.GetAll())
-                    {
-                        Console.WriteLine(eq.ToString());
-                    }
-                    break;
-                case "2":
-                    foreach (Member member in memberRepo.GetAll())
-                    {
-                        Console.WriteLine(member.ToString());
-                    }
-                    break;
-                case "3":
-                    List<Equipment> dueEquipment = equipmentRepo.FindNeedingCleaning(DateTime.Now);
-                    foreach (Equipment eq in dueEquipment)
-                    {
-                        Console.WriteLine(eq.ToString());
-                    }
-                    break;
-                case "4":
-                    Console.WriteLine("Enter new member ID:");
-                    int id = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Enter new member name:");
-                    string name = Console.ReadLine();
-                    Member newMember = new Member(id, name, DateTime.Now);
-                    memberRepo.Add(newMember);
-                    Console.WriteLine("Member added. Welcome to the Agency...");
-                    break;
-                case "5":
-                    equipmentAdapter.WriteFromRepository(equipmentRepo);
-                    memberAdapter.WriteFromRepository(memberRepo);
-                    break;
-                case "6":
-                    Console.WriteLine("Enter equipment ID to clean:");
-                    int cleanId = int.Parse(Console.ReadLine());
-                    {
-                        Equipment eqClean = equipmentRepo.FindById(cleanId);
-                        if (eqClean != null)
-                        {
-                            eqClean.Clean();
-                            equipmentRepo.Update(eqClean);
-                            Console.WriteLine("Equipment cleaned and schedule updated.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Equipment not found.");
-                        }
-                    }
-                    break;
-                case "7":
-                    Console.WriteLine("Enter equipment ID to maintain:");
-                    int maintainId = int.Parse(Console.ReadLine());
-                    Equipment eqMaintain = equipmentRepo.FindById(maintainId);
-                    if (eqMaintain != null)
-                    {
-                        eqMaintain.Maintain();
-                        equipmentRepo.Update(eqMaintain);
-                        Console.WriteLine("Equipment maintained and schedule updated.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Equipment not found.");
-                    }
-                    break;
-                case "8":
-                    Console.WriteLine("Exiting the Agency Gym Manager...");
-                    exit = true;
-                    break;
-                default:
-                    Console.WriteLine("Please enter one of the available options...");
-                    break;
-            }
+            Console.WriteLine(" Login failed.");
+            return;
         }
+
+        Console.WriteLine($"\n Logged in as {user.Role}");
+
+        // STRATEGY MENU SELECTION
+        IMenuStrategy menu = user switch
+        {
+            AdminUser => new AdminMenuStrategy(),
+            OwnerUser => new OwnerMenuStrategy(),
+            EmployeeUser => new EmployeeMenuStrategy(),
+            MemberUser => new MemberMenuStrategy(),
+            _ => throw new Exception("Unknown user role")
+        };
+
+        // SHOW MENU
+        menu.ShowMenu();
+
+        Console.WriteLine("\nPress ENTER to exit...");
+        Console.ReadLine();
     }
 }
