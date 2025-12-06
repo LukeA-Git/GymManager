@@ -1,3 +1,4 @@
+using System;
 using GymManager.Domain.Interfaces;
 
 namespace GymManager.Application.Menus
@@ -7,10 +8,30 @@ namespace GymManager.Application.Menus
         public void ShowMenu()
         {
             Console.WriteLine("\n--- MEMBER MENU ---");
-            Console.WriteLine("1. View workout schedule");
-            Console.WriteLine("2. View membership info");
-            Console.WriteLine("3. Submit support request");
-            Console.WriteLine("4. Logout");
+            Console.WriteLine("1. View personal info");
+            Console.WriteLine("2. View equipment");
+            Console.WriteLine("0. Logout");
+        }
+
+        public bool HandleChoice(string choice)
+        {
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Member profile feature coming soon...");
+                    return true;
+
+                case "2":
+                    Console.WriteLine("Viewing equipment (read-only)...");
+                    return true;
+
+                case "0":
+                    return false;
+
+                default:
+                    Console.WriteLine("Invalid option.");
+                    return true;
+            }
         }
     }
 }

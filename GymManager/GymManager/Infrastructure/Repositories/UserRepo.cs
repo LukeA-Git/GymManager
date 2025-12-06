@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using GymManager.Domain.Interfaces;
 using GymManager.Domain.Models;
 

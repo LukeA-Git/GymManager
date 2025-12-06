@@ -8,10 +8,6 @@ namespace GymManager.Domain.Models
         {
             UserID = id;
             UserPassword = password;
-
-            CanAdjustPerm = true;
-            CanReqAudit = true;
-            CanRequest = true;
         }
     }
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace GymManager.Domain.Models
 {
     public class Member
@@ -33,12 +31,6 @@ namespace GymManager.Domain.Models
         public override string ToString()
         {
             return $"Member ID: {Id}, Name: {Name}, Enrolled: {EnrollDate:yyyy-MM-dd}";
-        }
-
-        public void Pay()
-        {
-            // TODO: implement payment logic, for now, prints 'paid"
-            Console.WriteLine($"[WIP] {Name} paid");
         }
     }
 }

@@ -45,6 +45,7 @@ class Program
         memberAdapter.ReadIntoRepository(memberRepo);
         userAdapter.ReadIntoRepository(userRepo);
 
+        // Strategy-based design starts 
         var app = new GymApp(
             equipmentRepo,
             memberRepo,
@@ -55,7 +56,7 @@ class Program
 
         app.Run();
 
-        // ✅ AUTO-SAVE USERS ON EXIT
+        // Users get written when exit
         userAdapter.WriteFromRepository(userRepo);
     }
 }

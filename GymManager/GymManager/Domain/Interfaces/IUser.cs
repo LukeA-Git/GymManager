@@ -7,14 +7,9 @@ namespace GymManager.Domain.Interfaces
 
         // READ-ONLY ROLE
         string Role { get; }
-
-        bool CanAdjustPerm { get; }
-        bool CanReqAudit { get; }
-        bool CanRequest { get; }
-
+        
         string ToCsvLine();
         bool ValidatePassword(string password);
 
-        void GetAllOpt();
     }
 }

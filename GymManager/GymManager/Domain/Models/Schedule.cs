@@ -1,5 +1,3 @@
-using System;
-
 namespace GymManager.Domain.Models
 {
     public class Schedule
@@ -12,15 +10,16 @@ namespace GymManager.Domain.Models
             LastPerformed = lastPerformed;
             NextScheduled = nextScheduled;
         }
-        
-        public void Perform()
+
+        public bool IsDue()
+        {
+            return DateTime.Now >= NextScheduled;
+        }
+
+        public void UpdateNext(int days)
         {
             LastPerformed = DateTime.Now;
-        }
-        
-        public bool IsDue(DateTime currentDate)
-        {
-            return currentDate >= NextScheduled;
+            NextScheduled = DateTime.Now.AddDays(days);
         }
     }
 }

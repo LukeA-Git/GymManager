@@ -6,6 +6,7 @@ public class Equipment
     public int Id { get; }
     public EQType EQType { get; }
     public string Name { get; }
+
     public Schedule Cleaning { get; private set; }
     public Schedule Maintenance { get; private set; }
 
@@ -20,12 +21,12 @@ public class Equipment
 
     public void Clean()
     {
-        Cleaning.LastPerformed = DateTime.Now;
+        Cleaning.UpdateNext(7);   // every 7 days
     }
 
     public void Maintain()
     {
-        Maintenance.LastPerformed = DateTime.Now;
+        Maintenance.UpdateNext(30); // every 30 days
     }
 
     public bool IsDueForCleaning(DateTime currentDate)
@@ -38,16 +39,24 @@ public class Equipment
         return currentDate >= Maintenance.NextScheduled;
     }
 
+
     public string ToCsvLine()
     {
-        return $"{Id},{EQType},{Name},{Cleaning.NextScheduled:yyyy-MM-dd},{Maintenance.NextScheduled:yyyy-MM-dd}";
+        return $"{Id},{EQType},{Name}," +
+               $"{Cleaning.LastPerformed:yyyy-MM-dd}," +
+               $"{Cleaning.NextScheduled:yyyy-MM-dd}," +
+               $"{Maintenance.LastPerformed:yyyy-MM-dd}," +
+               $"{Maintenance.NextScheduled:yyyy-MM-dd}";
     }
 
     public override string ToString()
     {
-        return $"Equipment ID: {Id}, Name: {Name}, Type: {EQType}, " +
-               $"Last Cleaning: {Cleaning.LastPerformed:yyyy-MM-dd} " +
-               $"Last Maintenance: {Maintenance.LastPerformed:yyyy-MM-dd}";
+        return
+            $"Equipment ID: {Id}, Name: {Name}, Type: {EQType}\n" +
+            $"  Last Cleaning: {Cleaning.LastPerformed:yyyy-MM-dd}\n" +
+            $"  Next Cleaning: {Cleaning.NextScheduled:yyyy-MM-dd}\n" +
+            $"  Last Maintenance: {Maintenance.LastPerformed:yyyy-MM-dd}\n" +
+            $"  Next Maintenance: {Maintenance.NextScheduled:yyyy-MM-dd}";
     }
 
     public static Equipment FromCsvLine(string line)
@@ -57,24 +66,19 @@ public class Equipment
         int id = int.Parse(parts[0].Trim());
         EQType type = Enum.Parse<EQType>(parts[1].Trim());
         string name = parts[2].Trim();
+        
 
         DateTime cleanLast = DateTime.Parse(parts[3].Trim());
-        DateTime cleanNext = DateTime.Parse(parts[4].Trim());
-
-        DateTime maintainLast = parts.Length > 5
-            ? DateTime.Parse(parts[5].Trim())
-            : cleanLast;
-
-        DateTime maintainNext = parts.Length > 6
-            ? DateTime.Parse(parts[6].Trim())
-            : cleanNext.AddDays(30);
+        DateTime cleanNext2 = DateTime.Parse(parts[4].Trim());
+        DateTime maintainLast = DateTime.Parse(parts[5].Trim());
+        DateTime maintainNext2 = DateTime.Parse(parts[6].Trim());
 
         return new Equipment(
             id,
             type,
             name,
-            new Schedule(cleanLast, cleanNext),
-            new Schedule(maintainLast, maintainNext)
+            new Schedule(cleanLast, cleanNext2),
+            new Schedule(maintainLast, maintainNext2)
         );
     }
 
