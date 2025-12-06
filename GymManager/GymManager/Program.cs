@@ -17,7 +17,6 @@ class Program
         userRepo.Add(new AdminUser { UserID = 1, UserPassword = "admin", Role = "Admin" });
         userRepo.Add(new OwnerUser { UserID = 2, UserPassword = "own", Role = "Owner" });
         userRepo.Add(new EmployeeUser { UserID = 3, UserPassword = "emp", Role = "Employee" });
-        userRepo.Add(new MemberUser { UserID = 4, UserPassword = "mem", Role = "Member" });
 
         // LOGIN
         Console.WriteLine("=== LOGIN ===");
@@ -43,7 +42,6 @@ class Program
             AdminUser => new AdminMenuStrategy(),
             OwnerUser => new OwnerMenuStrategy(),
             EmployeeUser => new EmployeeMenuStrategy(),
-            MemberUser => new MemberMenuStrategy(),
             _ => throw new Exception("Unknown user role")
         };
 
