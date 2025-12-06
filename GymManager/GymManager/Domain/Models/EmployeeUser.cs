@@ -1,14 +1,14 @@
-using GymManager.Domain.Models;
-
 namespace GymManager.Domain.Models
 {
     public class EmployeeUser : GymUser
     {
-        public EmployeeUser()
-        {
-            Role = "Employee";
+        public override string Role => "Employee";
 
-            // Employees can only send general requests
+        public EmployeeUser(int id, string password)
+        {
+            UserID = id;
+            UserPassword = password;
+
             CanAdjustPerm = false;
             CanReqAudit = false;
             CanRequest = true;

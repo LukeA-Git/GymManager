@@ -43,22 +43,39 @@ public class Equipment
         return $"{Id},{EQType},{Name},{Cleaning.NextScheduled:yyyy-MM-dd},{Maintenance.NextScheduled:yyyy-MM-dd}";
     }
 
+    public override string ToString()
+    {
+        return $"Equipment ID: {Id}, Name: {Name}, Type: {EQType}, " +
+               $"Last Cleaning: {Cleaning.LastPerformed:yyyy-MM-dd} " +
+               $"Last Maintenance: {Maintenance.LastPerformed:yyyy-MM-dd}";
+    }
+
     public static Equipment FromCsvLine(string line)
     {
         var parts = line.Split(',');
 
+        int id = int.Parse(parts[0].Trim());
+        EQType type = Enum.Parse<EQType>(parts[1].Trim());
+        string name = parts[2].Trim();
+
+        DateTime cleanLast = DateTime.Parse(parts[3].Trim());
+        DateTime cleanNext = DateTime.Parse(parts[4].Trim());
+
+        DateTime maintainLast = parts.Length > 5
+            ? DateTime.Parse(parts[5].Trim())
+            : cleanLast;
+
+        DateTime maintainNext = parts.Length > 6
+            ? DateTime.Parse(parts[6].Trim())
+            : cleanNext.AddDays(30);
+
         return new Equipment(
-            int.Parse(parts[0].Trim()),
-            Enum.Parse<EQType>(parts[1].Trim()),
-            parts[2].Trim(),
-            new Schedule(
-                DateTime.Parse(parts[3].Trim()),
-                DateTime.Parse(parts[4].Trim())
-            ),
-            new Schedule(
-                DateTime.Parse(parts[5].Trim()),
-                DateTime.Parse(parts[6].Trim())
-            )
+            id,
+            type,
+            name,
+            new Schedule(cleanLast, cleanNext),
+            new Schedule(maintainLast, maintainNext)
         );
     }
+
 }

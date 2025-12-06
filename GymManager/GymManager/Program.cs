@@ -1,8 +1,8 @@
 ﻿using System;
-using GymManager.Domain.Interfaces;
+using GymManager.Application;
 using GymManager.Domain.Models;
+using GymManager.Infrastructure.FileAdapter;
 using GymManager.Infrastructure.Repositories;
-using GymManager.Application.Menus;
 
 namespace GymManager;
 
@@ -10,47 +10,52 @@ class Program
 {
     static void Main(string[] args)
     {
-        // CREATE USER REPOSITORY
+        Console.WriteLine("Enter path to equipment data file:");
+        string equipmentFile = Console.ReadLine() ?? "";
+
+        Console.WriteLine("Enter path to member data file:");
+        string memberFile = Console.ReadLine() ?? "";
+
+        Console.WriteLine("Enter path to user data file:");
+        string userFile = Console.ReadLine() ?? "";
+
+        var equipmentRepo = new EquipmentRepo();
+        var memberRepo = new MemberRepo();
         var userRepo = new UserRepo();
 
-        // SEED USERS (Admin, Owner, Employee, Member)
-        userRepo.Add(new AdminUser { UserID = 1, UserPassword = "admin", Role = "Admin" });
-        userRepo.Add(new OwnerUser { UserID = 2, UserPassword = "own", Role = "Owner" });
-        userRepo.Add(new EmployeeUser { UserID = 3, UserPassword = "emp", Role = "Employee" });
-        userRepo.Add(new MemberUser { UserID = 4, UserPassword = "mem", Role = "Member" });
+        var equipmentAdapter = new FileAdapter<Equipment>(
+            equipmentFile,
+            Equipment.FromCsvLine,
+            eq => eq.ToCsvLine()
+        );
 
-        // LOGIN
-        Console.WriteLine("=== LOGIN ===");
-        Console.Write("User ID: ");
-        int id = int.Parse(Console.ReadLine()!);
+        var memberAdapter = new FileAdapter<Member>(
+            memberFile,
+            Member.FromCsvLine,
+            m => m.ToCsvLine()
+        );
 
-        Console.Write("Password: ");
-        string password = Console.ReadLine()!;
+        var userAdapter = new FileAdapter<GymUser>(
+            userFile,
+            UserFactory.FromCsvLine,
+            u => u.ToCsvLine()
+        );
 
-        IUser? user = userRepo.Authenticate(id, password);
+        equipmentAdapter.ReadIntoRepository(equipmentRepo);
+        memberAdapter.ReadIntoRepository(memberRepo);
+        userAdapter.ReadIntoRepository(userRepo);
 
-        if (user == null)
-        {
-            Console.WriteLine(" Login failed.");
-            return;
-        }
+        var app = new GymApp(
+            equipmentRepo,
+            memberRepo,
+            userRepo,
+            equipmentAdapter,
+            memberAdapter
+        );
 
-        Console.WriteLine($"\n Logged in as {user.Role}");
+        app.Run();
 
-        // STRATEGY MENU SELECTION
-        IMenuStrategy menu = user switch
-        {
-            AdminUser => new AdminMenuStrategy(),
-            OwnerUser => new OwnerMenuStrategy(),
-            EmployeeUser => new EmployeeMenuStrategy(),
-            MemberUser => new MemberMenuStrategy(),
-            _ => throw new Exception("Unknown user role")
-        };
-
-        // SHOW MENU
-        menu.ShowMenu();
-
-        Console.WriteLine("\nPress ENTER to exit...");
-        Console.ReadLine();
+        // ✅ AUTO-SAVE USERS ON EXIT
+        userAdapter.WriteFromRepository(userRepo);
     }
 }

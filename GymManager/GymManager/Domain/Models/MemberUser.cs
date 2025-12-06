@@ -1,14 +1,16 @@
-using GymManager.Domain.Models;
+using GymManager.Domain.Interfaces;
 
 namespace GymManager.Domain.Models
 {
     public class MemberUser : GymUser
     {
-        public MemberUser()
-        {
-            Role = "Member";
+        public override string Role => "Member";
 
-            // Members have NO access to internal system features
+        public MemberUser(int id, string password)
+        {
+            UserID = id;
+            UserPassword = password;
+
             CanAdjustPerm = false;
             CanReqAudit = false;
             CanRequest = false;

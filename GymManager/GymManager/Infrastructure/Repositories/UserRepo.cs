@@ -1,27 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using GymManager.Domain.Interfaces;
+using GymManager.Domain.Models;
 
 namespace GymManager.Infrastructure.Repositories
 {
-    public class UserRepo : IRepository<IUser>
+    public class UserRepo : IRepository<GymUser>
     {
-        private readonly List<IUser> _users = new();
+        private readonly List<GymUser> _users = new();
 
-        //  ADD
-        public void Add(IUser user)
+        public void Add(GymUser user)
         {
             _users.Add(user);
         }
 
-        //  REMOVE
-        public void Remove(IUser user)
+        public void Remove(GymUser user)
         {
             _users.Remove(user);
         }
 
-        //  UPDATE
-        public void Update(IUser user)
+        public void Update(GymUser user)
         {
             var existing = FindById(user.UserID);
             if (existing != null)
@@ -31,26 +29,23 @@ namespace GymManager.Infrastructure.Repositories
             }
         }
 
-        //  FIND BY ID
-        public IUser? FindById(int id)
+        public GymUser? FindById(int id)
         {
             return _users.FirstOrDefault(u => u.UserID == id);
         }
 
-        //  GET ALL
-        public List<IUser> GetAll()
+        public List<GymUser> GetAll()
         {
             return _users;
         }
 
-        //  CLEAR (THIS FIXES YOUR ERROR)
         public void Clear()
         {
             _users.Clear();
         }
 
-        //  LOGIN (CUSTOM METHOD)
-        public IUser? Authenticate(int id, string password)
+        // LOGIN METHOD
+        public GymUser? Authenticate(int id, string password)
         {
             return _users.FirstOrDefault(u =>
                 u.UserID == id &&

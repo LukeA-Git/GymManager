@@ -1,14 +1,14 @@
-using GymManager.Domain.Models;
-
 namespace GymManager.Domain.Models
 {
     public class OwnerUser : GymUser
     {
-        public OwnerUser()
-        {
-            Role = "Owner";
+        public override string Role => "Owner";
 
-            // FULL ACCESS
+        public OwnerUser(int id, string password)
+        {
+            UserID = id;
+            UserPassword = password;
+
             CanAdjustPerm = true;
             CanReqAudit = true;
             CanRequest = true;

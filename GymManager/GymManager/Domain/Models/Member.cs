@@ -15,7 +15,7 @@ namespace GymManager.Domain.Models
             EnrollDate = enrollDate;
         }
         
-        public static Member FromCsv(string line)
+        public static Member FromCsvLine(string line)
         {
             var parts = line.Split(',');
             return new Member(
@@ -25,9 +25,14 @@ namespace GymManager.Domain.Models
             );
         }
         
-        public string ToCsv()
+        public string ToCsvLine()
         {
             return $"{Id},{Name},{EnrollDate:yyyy-MM-dd}";
+        }
+        
+        public override string ToString()
+        {
+            return $"Member ID: {Id}, Name: {Name}, Enrolled: {EnrollDate:yyyy-MM-dd}";
         }
 
         public void Pay()

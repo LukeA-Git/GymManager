@@ -1,40 +1,37 @@
-using System.Collections.Generic;
 using GymManager.Domain.Interfaces;
+using System;
 
 namespace GymManager.Domain.Models
 {
-    public class GymUser : IUser
+    public abstract class GymUser : IUser
     {
-        // From IUser
         public int UserID { get; set; }
-        public string UserPassword { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
+        public string UserPassword { get; set; } = "";
 
-        public bool CanAdjustPerm { get; set; }
-        public bool CanReqAudit { get; set; }
-        public bool CanRequest { get; set; }
+        public abstract string Role { get; }
 
-        // Returns options this user has
-        public string[] GetAllOpt()
+        public bool CanAdjustPerm { get; protected set; }
+        public bool CanReqAudit { get; protected set; }
+        public bool CanRequest { get; protected set; }
+
+        public virtual string ToCsvLine()
         {
-            var options = new List<string>();
+            return $"{UserID},{UserPassword},{Role}";
+        }
 
-            if (CanAdjustPerm)
-            {
-                options.Add("Adjust user permissions");
-            }
+        public bool ValidatePassword(string password)
+        {
+            return UserPassword == password;
+        }
 
-            if (CanReqAudit)
-            {
-                options.Add("Request system audit report");
-            }
+        public virtual void GetAllOpt()
+        {
+            Console.WriteLine("Base User Options");
+        }
 
-            if (CanRequest)
-            {
-                options.Add("Submit general request");
-            }
-
-            return options.ToArray();
+        public override string ToString()
+        {
+            return $"UserID: {UserID}, Role: {Role}";
         }
     }
 }

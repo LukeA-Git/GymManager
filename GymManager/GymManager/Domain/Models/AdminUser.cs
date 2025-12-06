@@ -1,15 +1,15 @@
-using GymManager.Domain.Models;
-
 namespace GymManager.Domain.Models
 {
     public class AdminUser : GymUser
     {
-        public AdminUser()
-        {
-            Role = "Admin";
+        public override string Role => "Admin";
 
-            // Admin can run audits and general requests
-            CanAdjustPerm = false;
+        public AdminUser(int id, string password)
+        {
+            UserID = id;
+            UserPassword = password;
+
+            CanAdjustPerm = true;
             CanReqAudit = true;
             CanRequest = true;
         }
