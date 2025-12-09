@@ -23,7 +23,7 @@ var adapter = new FileAdapter<Member>(
 
  */
 
-public class FileAdapter<T>
+public class FileAdapter<T> : IFileAdapter<T>
 {
     private readonly string _filePath;
     private readonly Func<string, T> _mapLineToObject;
