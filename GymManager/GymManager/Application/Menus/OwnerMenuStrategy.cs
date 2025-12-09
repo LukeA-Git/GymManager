@@ -1,3 +1,4 @@
+using System;
 using GymManager.Domain.Interfaces;
 
 namespace GymManager.Application.Menus
