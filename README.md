@@ -81,15 +81,15 @@ The Strategy pattern was chosen to eliminate large conditional blocks when switc
 
 ## 6. UML Diagram
 
-All final UML diagrams are located in the `/uml` folder.
+The final UML diagram is located in the `/uml` folder.
 
-The diagrams include:
+The diagram includes:
 - Domain models
 - Repository structure
 - Strategy pattern relationships
 - Adapter pattern structure
 
-All UML diagrams accurately reflect the final implementation.
+The UML diagram accurately reflects the final implementation.
 
 ---
 
