@@ -1,4 +1,3 @@
-using System;
 using GymManager.Application;
 using GymManager.Domain.Models;
 using GymManager.Infrastructure.FileAdapter;
