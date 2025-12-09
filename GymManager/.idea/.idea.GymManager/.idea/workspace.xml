@@ -8,39 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5b26e6-59ea-4f4e-8fc3-0d3824b161c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GymManager/Application/Menus/MenuFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GymManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/AdminMenuStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Application/Menus/AdminMenuStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/EmployeeMenuStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Application/Menus/EmployeeMenuStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/GymApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Application/Menus/GymApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/MemberMenuStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Application/Menus/MemberMenuStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/OwnerMenuStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Application/Menus/OwnerMenuStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IMenuStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IMenuStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Interfaces/IUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/AdminUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/AdminUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/EmployeeUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/EmployeeUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/Equipment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/GymUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/GymUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/Member.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/Member.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/MemberUser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/OwnerUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/OwnerUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Domain/Models/Schedule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Domain/Models/Schedule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/EquipmentRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/EquipmentRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/MemberRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/MemberRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Repositories/UserRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Test Files/TestEquipment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Test Files/TestEquipment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/Test Files/TestUsers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/Test Files/TestUsers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764788576128</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="m">
+      <option name="closed" value="true" />
+      <created>1765310022649</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765310022649</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="wtv" />
-    <option name="LAST_COMMIT_MESSAGE" value="wtv" />
+    <MESSAGE value="m" />
+    <option name="LAST_COMMIT_MESSAGE" value="m" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

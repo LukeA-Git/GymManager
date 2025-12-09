@@ -1,4 +1,3 @@
-using System;
 using GymManager.Domain.Models;
 
 public class Equipment

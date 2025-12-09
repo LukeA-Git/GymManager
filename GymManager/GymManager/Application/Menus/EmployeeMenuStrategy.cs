@@ -1,4 +1,3 @@
-using System;
 using GymManager.Domain.Interfaces;
 
 namespace GymManager.Application.Menus
@@ -15,12 +14,13 @@ namespace GymManager.Application.Menus
         public void ShowMenu()
         {
             Console.WriteLine("\n--- EMPLOYEE MENU ---");
-            Console.WriteLine("1. List equipment");
-            Console.WriteLine("2. List members");
-            Console.WriteLine("3. View dirty equipment");
-            Console.WriteLine("4. Clean equipment");
-            Console.WriteLine("5. Maintain equipment");
-            Console.WriteLine("6. Save");
+            Console.WriteLine("1. List Equipment");
+            Console.WriteLine("2. List Members");
+            Console.WriteLine("3. View Equipment Needing Cleaning");
+            Console.WriteLine("4. View Equipment Needing Maintenance");  
+            Console.WriteLine("5. Clean Equipment");
+            Console.WriteLine("6. Maintain Equipment");
+            Console.WriteLine("7. Save");
             Console.WriteLine("0. Logout");
         }
 
@@ -31,9 +31,10 @@ namespace GymManager.Application.Menus
                 "1" => _app.ListEquipment(),
                 "2" => _app.ListMembers(),
                 "3" => _app.ListDirtyEquipment(),
-                "4" => _app.CleanEquipment(),
-                "5" => _app.MaintainEquipment(),
-                "6" => _app.SaveAll(),
+                "4" => _app.ListEquipmentNeedingMaintenance(), 
+                "5" => _app.CleanEquipment(),
+                "6" => _app.MaintainEquipment(),
+                "7" => _app.SaveAll(),
                 "0" => false,
                 _ => true
             };

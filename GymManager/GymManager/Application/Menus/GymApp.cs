@@ -222,6 +222,25 @@ namespace GymManager.Application
             return true;
         }
 
+        public bool ListEquipmentNeedingMaintenance()
+        {
+            var due = _equipmentRepo.FindNeedingMaintenance(DateTime.Now);
+
+            if (due.Count == 0)
+            {
+                Console.WriteLine("No equipment currently needs maintenance.");
+                return true;
+            }
+
+            Console.WriteLine("\n--- EQUIPMENT NEEDING MAINTENANCE ---");
+            foreach (var eq in due)
+            {
+                Console.WriteLine(eq);
+            }
+
+            return true;
+        }
+
 
     }
 }
