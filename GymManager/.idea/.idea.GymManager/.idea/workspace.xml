@@ -8,7 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5b26e6-59ea-4f4e-8fc3-0d3824b161c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/GymManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Application/Menus/MemberMenuStrategy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/testfiles/TestEquipment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/TestFiles/TestEquipment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/testfiles/TestMembers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/TestFiles/TestMembers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/Infrastructure/testfiles/TestUsers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/Infrastructure/TestFiles/TestUsers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/bin/Debug/net9.0/GymManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/GymManager.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/ref/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/Debug/net9.0/refint/GymManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/GymManager/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,22 +75,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.GymManager.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.GymManager.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="GymManager" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -138,6 +152,34 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="5-solidify-irepository-structure-and-begin-implementation-of-memberrepo-and-equipmentrepo" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="wtv" />
