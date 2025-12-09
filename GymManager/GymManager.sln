@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager", "GymManager\GymManager.csproj", "{B7370A2A-C57D-4C28-90BB-51DD790CCBA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B599E1CE-20F9-4502-88C3-B0F3A8ADB409}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +14,5 @@ Global
 		{B7370A2A-C57D-4C28-90BB-51DD790CCBA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B7370A2A-C57D-4C28-90BB-51DD790CCBA9} = {B599E1CE-20F9-4502-88C3-B0F3A8ADB409}
 	EndGlobalSection
 EndGlobal
